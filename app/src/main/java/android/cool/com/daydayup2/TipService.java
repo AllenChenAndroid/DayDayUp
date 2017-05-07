@@ -61,6 +61,9 @@ public class TipService extends Service {
             PendingIntent pi=PendingIntent.getService(this,0,i,0);
             manager.set(AlarmManager.ELAPSED_REALTIME,triggerAtTime,pi);
         }
+        else{
+            stopSelf();
+        }
 
         return super.onStartCommand(intent, flags, startId);
     }
